@@ -14,4 +14,8 @@ class Tweet
     @@all
   end
 
+  def username
+    user.username
+  end
+
 end
