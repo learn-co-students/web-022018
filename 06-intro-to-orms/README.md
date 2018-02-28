@@ -5,11 +5,12 @@ ORM is a concept that can be applied with different specifics on the object end 
 
 ## How ORM works in Ruby, SQL, and IRL
 
-* What is represented by what?
-  1. Ruby Classes become database tables
-  2. Instances, or instantiated objects, become rows
-  3. Object attributes become columns
-  4. The entire state of an application is represented by the entire database
+What is represented by what?
+
+1. Ruby Classes become database tables
+2. Instances, or instantiated objects, become rows
+3. Object attributes become columns
+4. The entire state of an application is represented by the entire database
 
 ## CRUD - Create Read Update Destroy
 
