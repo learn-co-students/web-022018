@@ -1,12 +1,23 @@
-class Fan < DynamicRecord
-  attr_accessor :name, :artist_id
-  attr_reader :id
+class DynamicRecord
+  def self.table_name
+    self.to_s.downcase + "s"
+  end
 
-  def initialize(fan_attributes) # fan_attributes = { name: "Howard", artist_id: 34 }
-    @name = fan_attributes[:name]
-    @artist_id = fan_attributes[:artist_id]
-    @id = fan_attributes[:id]
-    super
+  def self.table_info
+    sql = <<-SQL
+      PRAGMA table_info (#{self.table_name})
+    SQL
+
+    DB.execute(sql)
+  end
+
+  def self.column_names
+    columns = self.table_info
+    columns.map {|col| col['name']}
+  end
+
+  def initialize(attributes) # fan_attributes = { name: "Howard", artist_id: 34 }
+
   end
 
   # ------ instance methods ------
@@ -25,15 +36,6 @@ class Fan < DynamicRecord
     Fan.format_sql(resp)
   end
 
-
-  def update(attributes)
-
-  end
-
-  # delete a record from the database
-  def delete
-
-  end
 
   # ------ class methods -------
 
@@ -59,16 +61,20 @@ class Fan < DynamicRecord
     sql = <<-SQL
       SELECT * FROM fans WHERE id = ?
     SQL
-
+    # puts "sql is "
+    # puts sql
     resp = DB.execute(sql, id)[0]
     Fan.format_sql(resp)
   end
 
-  def self.format_sql(response) # {"id"=>1, "name"=>"niky", "artist_id"=>11, 0=>1, 1=>"niky", 2=>11}
+  def self.format_sql(response)
+    # {"id"=>1, "name"=>"niky", "artist_id"=>11, 0=>1, 1=>"niky", 2=>11
     name = response['name']
     id = response['id']
     artist_id = response['artist_id']
     Fan.new(name: name, id: id, artist_id: artist_id)
   end
+
+
 
 end

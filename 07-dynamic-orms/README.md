@@ -1,3 +1,10 @@
+## Dynamic ORMs
+Creating a Superclass that our other subclasses inherit form
+This Superclass talks to SQL for us
+Subclass is blissfully unaware of SQL
+
+
+
 ## ORM definition - what is it?
 
 Object Relational Mapping
