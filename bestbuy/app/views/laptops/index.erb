@@ -1,0 +1,6 @@
+<h1>All Laptops</h1>
+<ul>
+  <% @laptops.each do |laptop| %>
+    <li><%= laptop.name %> | <%= laptop.brand %></li>
+  <% end %>
+</ul>
