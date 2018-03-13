@@ -1,1 +1,17 @@
-<h1>Hello from index.erb!</h1>
+<h2>All the sushis!!!</h2>
+
+<%# Change the list to include anchor tags with links to each sushi %>
+<%# In our restaurant metaphor, now this is more like a menu the 'guest' can choose from %>
+<%# Notice the use of interpolation to populate the url with sushi's id %>
+<%# Also, if there is no sushi, show message 'No sushi here' %>
+
+<ul>
+  <% if @sushis && !@sushis.empty? %>
+    <% @sushis.each do |sushi| %>
+      <a href="/sushis/<%= sushi.id %>"><%= sushi.name %></a>
+      <li><strong><%=sushi.description %></strong></li>
+    <% end %>
+  <% else %>
+    <p>No sushi here</p>
+  <% end %>
+</ul>
