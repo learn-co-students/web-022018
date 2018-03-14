@@ -1,0 +1,17 @@
+<form method="post" action="/books/<%= @book.id %>">
+  <input type="hidden" name="_method" value="patch" />
+
+  <input type="text" placeholder="Book Title" name="book[title]" value=<%= @book.title %> />
+  <input type="text" placeholder="Book Description" name="book[snippet]" value=<%= @book.snippet %> />
+  <select name="book[author_id]" >
+    <% @authors.each do |author| %>
+      <option <% if author.id == @book.author_id %>selected<% end %> value=<%= author.id %> ><%= author.first_name %> <%= author.last_name %></option>
+    <% end %>
+  </select>
+  <input type="submit" />
+</form>
+
+<form method="post" action="/books/<%= @book.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Book" />
+</form>

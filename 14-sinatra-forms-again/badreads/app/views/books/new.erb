@@ -1,0 +1,10 @@
+<form method="post" action="/books">
+  <input type="text" placeholder="Book Title" name="book[title]" />
+  <input type="text" placeholder="Book Description" name="book[snippet]" />
+  <select name="book[author_id]">
+    <% @authors.each do |author| %>
+      <option value=<%= author.id %> ><%= author.first_name %> <%= author.last_name %></option>
+    <% end %>
+  </select>
+  <input type="submit" />
+</form>
