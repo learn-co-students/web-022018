@@ -1,2 +1,9 @@
-<h2><%= @sushi.name %></h2>
-<p><%= @sushi.description %></p>
+<h2>Sushi Show</h2>
+<h2><i>Name: </i><%= @sushi.name %></h2>
+<p><i>Description: </i><%= @sushi.description %></p>
+
+<form action="/sushis/<%= @sushi.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input style="color:red" type="submit" name="" value="destroy <%= @sushi.name %>"><br>
+</form><br>
+<a href="/sushis/<%= @sushi.id %>/edit">Edit <%= @sushi.name %></a>

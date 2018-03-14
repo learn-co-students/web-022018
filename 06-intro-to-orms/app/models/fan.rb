@@ -18,8 +18,9 @@ class Fan
 
   # what if we want to initialize with a hash of attributes
   def initialize(fan_attributes) # fan_attributes = { name: "Howard", artist_id: 34 }
-    @name = fan_attributes[:name]
-    @artist_id = fan_attributes[:artist_id]
+    binding.pry
+    @name = fan_attributes[:"name"]
+    @artist_id = fan_attributes[:"artist_id"]
   end
 
   # ------ instance methods ------
@@ -60,6 +61,13 @@ class Fan
 
   # ------ class methods -------
 
+  # right now, we're getting back arrays of hashes from our db.  let's turn these into Ruby class instances we can use
+  def self.new_from_row(fan_row_from_db)
+    fan = Fan.new(fan_row_from_db)
+    fan.instance_variable_set(:@id, fan_row_from_db["id"])
+    fan
+  end
+
   # create should instantiate a new instance and save it to the database
   def self.create(attributes)
     new_fan = self.new(attributes)
@@ -72,22 +80,28 @@ class Fan
       SELECT * FROM fans
     SQL
 
-    DB.execute(sql)
+    fan_rows_from_db = DB.execute(sql)
+    fan_rows_from_db.map do |fan_row_from_db|
+      self.new_from_row(fan_row_from_db)
+    end
   end
 
   # how many records are there?
   def self.count
+    sql = <<-SQL
+      SELECT COUNT(*) FROM fans
+    SQL
 
+    DB.execute(sql)
   end
 
   # find an instance by id
   def self.find(id)
     sql = <<-SQL
-      SELECT * FROM fans WHERE id = #{id}
+      SELECT * FROM fans WHERE id = ?
     SQL
-    puts "sql is "
-    puts sql
-    DB.execute_batch(sql)
+
+    DB.execute(sql, id)
   end
 
   # given a name, return a record
@@ -100,6 +114,19 @@ class Fan
   # how could we implement this?
   def self.find_by(attributes)
 
+  end
+
+  def self.reset_fan_table
+    drop_table = <<-SQL
+      DROP TABLE IF EXISTS fans;
+    SQL
+
+    create_table = <<-SQL
+      CREATE TABLE IF NOT EXISTS fans (id INTEGER PRIMARY KEY, name TEXT, artist_id INTEGER);
+    SQL
+
+    DB.execute_batch(drop_table + create_table)
+    # DB.execute(create_table)
   end
 
 end

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="margin:30px;padding:30px">
+    <%# Silly stuff: %>
+    <h1><i>The Great Sushi MVC Restaurant Adventure</i></h1>
+    <h4>Starring: </h4>
+    <p>Mr. Box............<i>as the User</i></p>
+    <p>Angelo............<i>as the Waiter/Controller</i></p>
+    <p>Sushi John............<i>as the Chef/Model</i></p>
+    <p>Mr. Table............<i>as the Table/View</i></p>
+
+    <%# Look, here's how we can use yield !!! :) %>
+    <%# If you have a template in the views folder called 'layout',  %>
+    <%# Sinatra will grab it as the main HTML output and stick the  %>
+    <%# other template called by the controller wherever it finds  %>
+    <%# the yield statement (you don't have to put it in a div)  %>
+    <div class="main-event" style="border-style:solid;border-color:pink;border-width:2px">
+
+      <%= yield %>
+
+    </div>
+
+    <div class="" style="margin:10px;padding:10px">
+      <%# Here is a 'menu bar', obviously not the best, but you get the idea... %>
+      <a href="/sushis">All the Sushi</a>
+    </div>
+
+
+  </body>
+</html>

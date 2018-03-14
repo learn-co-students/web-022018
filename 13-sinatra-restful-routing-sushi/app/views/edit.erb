@@ -1,0 +1,10 @@
+<h2>Edit sushi!</h2>
+<form action="/sushis/<%= @sushi.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  Name: <input type="text" name="name" value="<%= @sushi.name %>"><br>
+  Description: <input type="text" name="description" value="<%= @sushi.description %>"><br>
+  <input type="submit" name="" value="edit sushi"><br>
+</form><br>
+<br>
+
+<a href="/sushis/<%= @sushi.id %>">Back to <%= @sushi.name %> show page</a>
