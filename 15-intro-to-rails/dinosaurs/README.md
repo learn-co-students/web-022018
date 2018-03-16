@@ -59,7 +59,7 @@ gem install rails -v=INSERT_RAILS_VERSION_HERE
 
 ## Demo: _dinosaurs!_
 
-_Editor's note: the code in this repo doesn't match the walkthroughs and examples below, but rather is the result of coding during the corresponding lecture. Also, there have been some updates and comments sprinkled in here and there. Also, `rails g resource caveman` was run, so check out the result. It's a little more than we want -- with .coffee and .scss files, but it does give us the model, controller, migration, views folder, and CRUD routes we want._
+_Editor's note: the code in this repo doesn't match the walkthroughs and examples below, but rather is the result of coding during the corresponding lecture. Also, there have been some updates and comments sprinkled in here and there. In addition, `rails g resource caveman` was run, so check out the result. It's a little more than we want -- with .coffee and .scss files, but it does give us the model, controller, migration, views folder, and CRUD routes we want. Have a look at `dinosaurs/new.html.erb`. Examples are given for three ways to build the same form!!! Feel free to fork and clone to build out the missing functionality here._
 
 On the command of the parent directory where you want your app to go:
 
