@@ -181,7 +181,7 @@ As a reminder, a RESTful resource will include 7 methods:
 Rails has a generator called `scaffold` that will create the whole MVC structure for a resource, let's say that inside the dinosaurs app, we want the `Dinosaur` resource to have a name and a number_of_teeth field, we would type:
 
 ```ruby
-rails g scaffold Dinosaur name number_of_teeth:integer # remember that if we don't specify data type, it defaults to string
+rails g scaffold dinosaur name number_of_teeth:integer # remember that if we don't specify data type, it defaults to string
 ```
 
 Running this command will generate a lot of files, including the controller, the views, the model, and the migration. It will also update the routes file.
@@ -191,7 +191,7 @@ Take a look at the controller, it has all the RESTful methods, and these methods
 We don't want all the files created with the scaffold and in practice you won't actually use it so let's delete it
 
 ```ruby
-rails d scaffold Dinosaur
+rails d scaffold dinosaur
 ```
 
 Let's go ahead and generate a new Dinosaurs controller.
