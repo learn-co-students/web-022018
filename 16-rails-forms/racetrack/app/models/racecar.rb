@@ -1,0 +1,2 @@
+class Racecar < ApplicationRecord
+end

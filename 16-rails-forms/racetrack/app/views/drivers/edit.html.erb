@@ -1,0 +1,4 @@
+<%= render "form" %>
+<%= form_tag("/drivers/#{@driver.id}", method: "DELETE") do %>
+  <%= submit_tag "Delete Driver" %>
+<% end %>
