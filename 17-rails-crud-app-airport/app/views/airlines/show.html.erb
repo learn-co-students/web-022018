@@ -4,13 +4,6 @@
 <h3><%= @airline.name %></h3>
 
 <%# We want to show flights here!  %>
-<h3>Search flights by destination:</h3>
-
-<%= form_tag "/flights/search", method: :get do %>
-  <%# input to receive user's data  %>
-  <%= collection_select :flight, :destination, Flight.all, :destination, :destination %>
-  <%= submit_tag "Search" %>
-<% end %>
 
 <ul>
   <% @airline.flights.each do |flight| %>
