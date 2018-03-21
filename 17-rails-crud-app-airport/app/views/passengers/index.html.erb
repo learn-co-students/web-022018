@@ -1,0 +1,8 @@
+passenger index page
+
+<ul>
+  <% @passengers.each do |passenger| %>
+    <li><%= link_to passenger.name, passenger %></li>
+    <p><%= passenger.luggage %></p>
+  <% end %>
+</ul>
