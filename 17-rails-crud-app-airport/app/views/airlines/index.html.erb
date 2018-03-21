@@ -1,0 +1,10 @@
+<h1>Airlines#index</h1>
+<p>Find me in app/views/airlines/index.html.erb</p>
+
+<ul>
+
+<% @airlines.each do |airline| %>
+  <li><%= link_to airline.name, airline_path(airline.id) %></li>
+<% end %>
+
+</ul>

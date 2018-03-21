@@ -16,7 +16,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.new(passenger_params)
 
     if @passenger.save
-      redirect_to passenger
+      redirect_to @passenger
     else
       render :new
     end
@@ -27,6 +27,7 @@ class PassengersController < ApplicationController
   end
 
   def update
+
     if @passenger.update(passenger_params)
       redirect_to @passenger
     else

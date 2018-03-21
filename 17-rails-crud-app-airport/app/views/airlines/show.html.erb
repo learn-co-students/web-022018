@@ -1,0 +1,19 @@
+<h1>Airlines#show</h1>
+<p>Find me in app/views/airlines/show.html.erb</p>
+
+<h3><%= @airline.name %></h3>
+
+<%# We want to show flights here!  %>
+
+<ul>
+  <% @airline.flights.each do |flight| %>
+    <li><%= flight.destination %></li>
+    <li><%= flight.number %></li>
+    <li><%= flight.etd %></li>
+    <li><%= flight.eta %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Edit #{@airline.name}", edit_airline_path(@airline) %>
+<%= button_to "Delete #{@airline.name}", "/airlines/#{@airline.id}",method: :delete %>
