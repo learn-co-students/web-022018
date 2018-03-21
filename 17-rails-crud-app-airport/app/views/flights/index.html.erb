@@ -1,9 +1,5 @@
-<h1>Airlines#show</h1>
-<p>Find me in app/views/airlines/show.html.erb</p>
+flights index
 
-<h3><%= @airline.name %></h3>
-
-<%# We want to show flights here!  %>
 <h3>Search flights by destination:</h3>
 
 <%= form_tag "/flights/search", method: :get do %>
@@ -13,18 +9,13 @@
 <% end %>
 
 <ul>
-  <% @airline.flights.each do |flight| %>
+  <% @flights.each do |flight| %>
     <br>
-    <li><strong>Flight Number <%= flight.number %></strong></li>
+    <li>Flight number <%= link_to flight.number, flight_path(flight.id) %></li>
     <p>Airline: <%= flight.airline.name %></p>
-
     <p><strong>To:</strong>  <%= flight.destination %></p>
     <p><strong>Departs:</strong>  <%= flight.etd %></p>
     <p><strong>Arrives:</strong>  <%= flight.eta %></p>
     <br>
   <% end %>
 </ul>
-
-
-<%#= link_to "Edit #{@airline.name}", edit_airline_path(@airline) %>
-<%= button_to "Delete #{@airline.name}", "/airlines/#{@airline.id}", method: :delete %>

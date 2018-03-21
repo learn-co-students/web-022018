@@ -3,6 +3,19 @@ passenger show page
 <h2><%= @passenger.name %></h2>
 <h4><%= @passenger.luggage %></h4>
 
+<h5><%= @passenger.name %>'s Flights</h5>
+<ul>
+  <% @passenger.flights.each do |flight| %>
+    <br>
+    <li>Flight number <%= link_to flight.number, flight_path(flight.id) %></li>
+    <p>Airline: <%= flight.airline.name %></p>
+    <p><strong>To:</strong>  <%= flight.destination %></p>
+    <p><strong>Departs:</strong>  <%= flight.etd %></p>
+    <p><strong>Arrives:</strong>  <%= flight.eta %></p>
+    <br>
+  <% end %>
+</ul>
+
 <%# The only reason I'm using a button_to for this link is style %>
 <%= button_to "Edit #{@passenger.name}", edit_passenger_path(@passenger), method: :get %>
 
@@ -13,8 +26,8 @@ passenger show page
   <%= f.submit "Delete #{@passenger.name}" %>
 <% end %>
 
-<%= form_tag @passenger, method: :delete do %>
-  <%= submit_tag "Delete #{@passenger.name}" %>
-<% end %>
+<%#= form_tag @passenger, method: :delete do %>
+  <%#= submit_tag "AAAAHHAHAHHAAHA #{@passenger.name}" %>
+<%# end %>
 
-<%= button_to "Delete #{@passenger.name}", "/passengers/#{@passenger.id}", method: :delete %>
+<%#= button_to "Delete #{@passenger.name}", "/passengers/#{@passenger.id}", method: :delete %>

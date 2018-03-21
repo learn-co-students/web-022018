@@ -1,20 +1,28 @@
 class AirlinesController < ApplicationController
 
-  before_action :airline_find, only: [:edit, :update, :show, :destroy]
+  before_action :airline_find, only: [:show, :destroy]
 
   def new
     @airline = Airline.new
   end
 
   def create
+    @airline = Airline.new(airline_params)
+
+    if @airline.valid?
+      @airline.save
+      redirect_to(@airline)
+    else
+      render :new
+    end
 
   end
 
-  def edit
-  end
-
-  def update
-  end
+  # def edit
+  # end
+  #
+  # def update
+  # end
 
   def index
     @airlines = Airline.all

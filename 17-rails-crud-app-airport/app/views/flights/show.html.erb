@@ -1,0 +1,14 @@
+flight show
+
+
+  <li><strong>Flight Number <%= @flight.number %></strong></li>
+  <p><strong>To:</strong>  <%= @flight.destination %></p>
+  <p><strong>Departs:</strong>  <%= @flight.etd %></p>
+  <p><strong>Arrives:</strong>  <%= @flight.eta %></p>
+  <br>
+
+  <%= form_for @flight.tickets.build do |f| %>
+    <%= f.collection_select :passenger_id, Passenger.all, :id, :name %>
+    <%= f.hidden_field :flight_id, value: @flight.id %>
+    <%= f.submit %>
+  <% end %>
