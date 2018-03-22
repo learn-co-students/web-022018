@@ -4,7 +4,7 @@ flights index
 
 <%= form_tag "/flights/search", method: :get do %>
   <%# input to receive user's data  %>
-  <%= collection_select :flight, :destination, Flight.all, :destination, :destination %>
+  <%= collection_select :flight, :destination, @destinations, :to_s, :to_s %>
   <%= submit_tag "Search" %>
 <% end %>
 

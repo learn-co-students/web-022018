@@ -1,7 +1,8 @@
 class FlightsController < ApplicationController
   def index
+    @destinations = Flight.destinations
     if params[:flight]
-      @flights = Flight.all.select {|flight| flight.destination == params[:flight][:destination]}
+      @flights = Flight.select {|flight| flight.destination == params[:flight][:destination]}
     else
       @flights = Flight.all
     end
