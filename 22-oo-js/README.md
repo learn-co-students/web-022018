@@ -1,5 +1,7 @@
 # Objects
 
+- What are Objects
+- What is Object Oriented Programming
 - Object Creation
   - Object Literals
   - Object Literals with Methods
