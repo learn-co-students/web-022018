@@ -1,0 +1,12 @@
+languages:
+  - javascript
+tags:
+  - js
+  - classical
+  - oo
+  - object oriented
+  - task list
+  - advanced
+resources: 2
+type:
+  - lab
