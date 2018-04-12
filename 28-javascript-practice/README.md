@@ -2,7 +2,7 @@
 ![Top Secret](http://www.kriegsfeldnp.com/misc_photos/TSDem.jpg)
 
 ## Assignment
-There is a threat to world peace. Someone has stolen all the code to make to-do lists in the browser and productivity is down across all non-developers in the world! We have faith in you, but we need you to follow the steps outline below carefully. **Your objective is to build 22 to-do list applications (one for each agent) to replace all the versions that were stolen.** _Don't do anything to risk the mission._
+There is a threat to world peace. Someone has stolen all the code to make to-do lists in the browser and productivity is down across all non-developers in the world! We have faith in you, but we need you to follow the steps outline below carefully. **Your objective is to build a to-do list application.** _Don't do anything to risk the mission._
 
 ## Technical Briefing
 You will use your technical and creative ability to develop a front-end application which accomplishes these goals. We just need an MVP and your job is to build the following features on the front-end with persistence to the back-end:
