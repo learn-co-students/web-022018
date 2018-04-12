@@ -47,7 +47,7 @@ POST   /tasks
 
     # Request Headers
     Content-Type: application/json
-    Accepts: application/json
+    Accept: application/json
 
     # Request Body
     {
@@ -74,12 +74,12 @@ PATCH   /tasks/<task id>
 
     # Request Headers
     Content-Type: application/json
-    Accepts: application/json
+    Accept: application/json
 
     # Request Body
     {
       task: {
-        checked: true
+        completed: true
       }
     }
 
