@@ -1,0 +1,3 @@
+class LivingThing::Plant
+
+end 

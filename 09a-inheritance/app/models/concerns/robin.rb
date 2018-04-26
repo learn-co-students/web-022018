@@ -1,0 +1,2 @@
+class Robin < Bird
+end 

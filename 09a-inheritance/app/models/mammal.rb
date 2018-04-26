@@ -1,0 +1,2 @@
+class Mammal < Vertebrate
+end
