@@ -1,0 +1,32 @@
+Arguments: 
+  /Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/bin/node /Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/bin/yarn start
+
+PATH: 
+  /Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/bin:/Users/graham.troyer-joy/.rvm/gems/ruby-2.3.3/bin:/Users/graham.troyer-joy/.rvm/gems/ruby-2.3.3@global/bin:/Users/graham.troyer-joy/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/graham.troyer-joy/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  6.11.2
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Couldn't find a package.json file in "/Users/graham.troyer-joy/Code/react-auth/backend"
+      at MessageError.Error (native)
+      at new MessageError (/Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/lib/node_modules/yarn/lib/cli.js:186:110)
+      at /Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/lib/node_modules/yarn/lib/cli.js:40048:15
+      at next (native)
+      at step (/Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /Users/graham.troyer-joy/.nvm/versions/node/v6.11.2/lib/node_modules/yarn/lib/cli.js:109:13

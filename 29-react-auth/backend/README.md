@@ -1,0 +1,12 @@
+Understand:
+  - Tokens and signing
+  - How to create tokens in Ruby
+    - ruby-jwt
+    - using dotenv-rails to hide your encryption key
+  - How to use tokens to secure a Rails api
+    - Authentication
+      - has_secure_password again
+      - validation
+      - Headers
+        - Authorization: Token token=123123123
+    - Authorization 
